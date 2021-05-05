@@ -1,6 +1,6 @@
 set -e
 cd /build
-echo > /usr/local/cargo/config << EOF
+cat > /usr/local/cargo/config << EOF
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
 replace-with = 'ustc'
