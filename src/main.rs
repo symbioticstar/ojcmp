@@ -61,7 +61,7 @@ fn open_ro(path: PathBuf) -> RawFd {
     }
 }
 
-fn main() -> Comparison {
+fn main() {
     let opt: Opt = Opt::from_args();
 
     let user_fd = match opt.user_path {
@@ -83,5 +83,5 @@ fn main() -> Comparison {
         user.drop_all();
     }
 
-    cmp
+    std::process::exit(*cmp)
 }
