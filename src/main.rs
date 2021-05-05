@@ -83,5 +83,5 @@ fn main() {
         user.drop_all();
     }
 
-    std::process::exit(*cmp)
+    std::process::exit(*&cmp as i32)
 }
