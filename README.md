@@ -1,5 +1,11 @@
 # ojcmp
 
+## Note
+
+Altered version for horoscope.
+
+Maintained by ss.
+
 > [experimental] online judge comparer
 
 ## Build

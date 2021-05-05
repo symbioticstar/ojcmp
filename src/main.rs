@@ -13,6 +13,7 @@ pub mod errno {
     }
 
     use std::ffi::CStr;
+
     pub unsafe fn on_error() -> ! {
         let errno = get_errno();
         let ptr = libc::strerror(errno); // non-null
@@ -23,7 +24,7 @@ pub mod errno {
 }
 
 use crate::chars::Chars;
-use crate::compare::compare;
+use crate::compare::{compare, Comparison};
 use crate::errno::on_error;
 
 use std::ffi::CString;
@@ -60,7 +61,7 @@ fn open_ro(path: PathBuf) -> RawFd {
     }
 }
 
-fn main() {
+fn main() -> Comparison {
     let opt: Opt = Opt::from_args();
 
     let user_fd = match opt.user_path {
@@ -82,5 +83,5 @@ fn main() {
         user.drop_all();
     }
 
-    println!("{:?}", cmp);
+    cmp
 }
