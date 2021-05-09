@@ -2,9 +2,9 @@ use crate::chars::{CharsLike, EOF};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Comparison {
-    AC,
-    WA,
-    PE,
+    AC = 100,
+    WA = 101,
+    PE = 102,
 }
 
 /// Compare `std` and `user`. The process will be terminated on error.
